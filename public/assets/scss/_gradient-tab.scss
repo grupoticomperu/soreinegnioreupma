@@ -1,0 +1,128 @@
+/*======= Gradient Tab =======*/
+.gradient-tab-section {
+    position: relative;
+    background-color: $text-color;
+    z-index: 1;
+    padding: 120px 0;
+
+    @include respond-below(md) {
+        padding: 480px 0 120px;
+    }
+
+    @include respond-below(sm) {
+        padding-bottom: 90px;
+    }
+
+    .half-bg {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 47.5%;
+        background: {
+            repeat: no-repeat;
+            position: center;
+            size: cover;
+        }
+
+        @include respond-below(md) {
+            width: 100%;
+            height: 420px;
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: {
+            image: url(../img/pattern/global-map-half.png);
+            repeat: no-repeat;
+            position: left center;
+        }
+        opacity: 0.2;
+    }
+}
+
+.gradient-tab {
+    .nav {
+        margin-bottom: 30px;
+
+        .nav-link {
+            background-color: #0b0d0f;
+            font: {
+                size: 16px;
+                family: $raj;
+                weight: 700;
+            }
+            text-transform: uppercase;
+            color: $white;
+            padding: 15px 40px;
+            position: relative;
+            z-index: 1;
+
+            @include respond-below(xs) {
+                padding: 15px 20px;
+                font-size: 15px;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, #ff9c00 0%, #fcd700 100%);
+                z-index: -1;
+                transition: 0.3s;
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            &.active {
+                color: $text-color;
+
+                &::after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        color: #e8e9e9;
+
+        ul {
+            margin-top: 30px;
+
+            li {
+                position: relative;
+                padding-left: 35px;
+
+                &::before {
+                    content: "\f560";
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    color: $primary-color;
+                    font : {
+                        family: "Font Awesome 5 Pro";
+                        weight: 300;
+                        size: 20px;
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,237 @@
+/*======= Counter =======*/
+.counter-section {
+    padding-top: 120px;
+    padding-bottom: 80px;
+
+    &.counter-boxed-style {
+        padding-top: 0;
+        padding-bottom: 0;
+        position: relative;
+        z-index: 2;
+        margin-bottom: -110px;
+
+        .counter-boxed-innter {
+            background-color: $text-color;
+            padding-top: 80px;
+            padding-bottom: 40px;
+            position: relative;
+            z-index: 1;
+
+            &::after {
+                position: absolute;
+                right: 20px;
+                bottom: -20px;
+                left: 20px;
+                height: 20px;
+                content: "";
+                z-index: -1;
+                background-color: $primary-color;
+            }
+        }
+    }
+
+    .counter-boxes {
+        .counter-box {
+            font-size: 16px;
+            font-weight: 700;
+            font-family: $raj;
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 40px;
+
+            @include respond-below(sm) {
+                font-size: 15px;
+            }
+
+            .icon {
+                font-size: 55px;
+                margin-bottom: 25px;
+                line-height: 1;
+                color: $primary-color;
+            }
+
+            .count {
+                display: block;
+                font-size: 55px;
+                margin-bottom: 5px;
+
+                @include respond-below(sm) {
+                    font-size: 42px;
+                }
+
+                &::after {
+                    content: "+";
+                    color: $primary-color;
+                    font-size: 16px;
+                    margin-left: 2px;
+                }
+            }
+
+            &.white-style {
+                color: $white;
+            }
+
+            &.icon-boxed-left {
+                display: flex;
+                align-items: center;
+                color: #4a4d4e;
+
+                @include respond-between(md, lg) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .icon {
+                    width: 100px;
+                    height: 100px;
+                    background-color: $white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 0;
+                    margin-right: 30px;
+                    font-size: 50px;
+
+                    img {
+                        max-width: 50px;
+                    }
+
+                    @include respond-between(md, lg) {
+                        margin-right: 0;
+                        margin-bottom: 30px;
+                    }
+
+                    @include respond-below(xs) {
+                        width: 80px;
+                        height: 80px;
+                    }
+                }
+
+                .count {
+                    color: $text-color;
+                    margin-bottom: 8px;
+
+                    &::after {
+                        color: $text-color;
+                        font-size: 80%;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        &.counter-boxes-border {
+            .counter-box {
+                border-right: 2px solid #e8e8e8;
+
+                @include respond-below(md) {
+                    border: none;
+                }
+            }
+
+            & > [class*="col-"]:last-child {
+                .counter-box {
+                    border: none;
+                }
+            }
+        }
+
+        &.counter-boxes-two {
+            .counter-box {
+                margin-bottom: 30px;
+                background-color: $white;
+                position: relative;
+                padding: 45px 30px;
+                position: relative;
+                z-index: 1;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-image: url(../img/pattern/07.png);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    z-index: -1;
+                }
+
+                .count {
+                    display: block;
+                    font-size: 80px;
+                    margin-bottom: 5px;
+
+                    @include respond-between(md, lg) {
+                        font-size: 60px;
+                    }
+
+                    @include respond-below(sm) {
+                        font-size: 54px;
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                .title {
+                    font-size: 24px;
+
+                    @include respond-between(md, lg) {
+                        font-size: 18px;
+                    }
+
+                    @include respond-below(sm) {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.counter-section-two {
+        padding-top: 330px;
+        margin-top: -330px;
+        background-color: $soft-grey-2;
+        position: relative;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/pattern/06.png);
+            background-repeat: no-repeat;
+            background-position: bottom;
+            background-size: 100%;
+        }
+    }
+
+    &.counter-section-three {
+        background-color: $primary-color;
+        padding-top: 100px;
+        padding-bottom: 70px;
+    }
+
+    &.counter-border-top {
+        .container {
+            position: relative;
+            z-index: 1;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: -120px;
+                width: 100%;
+                height: 1px;
+                background-color: #e8e9e9;
+            }
+        }
+    }
+}

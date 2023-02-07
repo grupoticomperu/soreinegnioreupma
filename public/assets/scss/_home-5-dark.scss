@@ -1,0 +1,264 @@
+/*=======  Home 5 Dark  =======*/
+%color-white {
+    color: $white;
+}
+
+%bg-text-color {
+    background-color: $text-color;
+}
+
+%bg-black {
+    background-color: $black;
+}
+
+.home-5-dark {
+    @extend %bg-black;
+    @extend %color-white;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        &,
+        a {
+            @extend %color-white;
+        }
+    }
+
+    .smoke-bg {
+        background-color: #0b0d0f;
+    }
+
+    .feature-boxes-four .feature-box {
+        @extend %bg-text-color;
+        border-color: transparent;
+
+        .count  {
+            @extend %color-white;
+        }
+
+        &:hover {
+            box-shadow: none;
+        }
+    }
+
+    .about-content-box .about-text {
+        @extend %bg-text-color;
+
+        &::before {
+            background-image: url(../img/icon/about-shape-2.png);
+        }
+    }
+
+    .skill-progress-bars .skill-progress {
+        .title,
+        .progress-counter {
+            @extend %color-white;
+        }
+    }
+
+    .service-boxes-two {
+        .service-box {
+            border-color: transparent;
+            @extend %bg-text-color;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 40px;
+                right: 40px;
+                bottom: 0;
+                height: 0;
+                background: linear-gradient(90deg, #fd7e14 0%, #ffc107 100%);
+                border-radius: 2px;
+                transition: 0.3s;
+                opacity: 0;
+                visibility: hidden;
+
+                @include respond-below(sm) {
+                    left: 35px;
+                    right: 35px;
+                }
+            }
+
+            .service-link {
+                color: $white;
+            }
+
+            &:hover {
+                &::after {
+                    height: 2px;
+                    visibility: visible;
+                    opacity: 1;
+                }
+
+                .service-link {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
+    .portfolio-page-link {
+        @extend %color-white;
+    }
+
+    .counter-section {
+        &.counter-border-top .container::before {
+            background-color: #7a7c7f;
+        }
+    }
+
+    .counter-boxes .counter-box {
+        &.icon-boxed-left {
+            color: #d2d3d3;
+
+            .icon {
+                @extend %bg-black;
+            }
+
+            .count {
+                &,
+                &::after {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .faq-content-box {
+        @extend %bg-text-color;
+
+        .contact-btn a {
+            @extend %color-white;
+        }
+    }
+
+    .accordion .accordion-item {
+        @extend %bg-black;
+
+        .accordion-header {
+            button {
+                @extend %color-white;
+            }
+        }
+
+        .accordion-body {
+            color: #e8e9e9;
+        }
+    }
+
+    .testimonial-box-two {
+        @extend %bg-text-color;
+
+        .content {
+            color: #e6e6e6;
+
+            &::before,
+            &::after {
+                @extend %bg-black;
+            }
+        }
+    }
+
+    .testimonial-cta-area .faq-testimonials-area::before {
+        display: none;
+    }
+
+    .gradient-tab-section {
+        background-color: #0b0d0f;
+    }
+
+    .latest-blog-posts {
+        .latest-blog-post-two {
+            .blog-desc {
+                background-color: #0b0d0f;
+                border-color: transparent;
+            }
+
+            .title a {
+                @extend %color-white;
+            }
+
+            .read-more-btn {
+                @extend %color-white;
+            }
+
+            .meta {
+                @extend %bg-text-color;
+
+                a:not(:hover) {
+                    color: $white;
+                }
+            }
+
+            &:hover {
+                box-shadow: none;
+
+                .read-more-btn {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
+    footer {
+        background-color: transparent;
+
+        .footer-widgets {
+            background: {
+                color: $black;
+                image: url(../img/pattern/09.jpg);
+            }
+
+            .widget {
+                &,
+                .widget-title {
+                    color: $white;
+                }
+
+                &.text-block-widget .read-more-btn,
+                &.text-block-widget .read-more-btn::before,
+                &.menu-widget li a {
+                    color: $white;
+                    background-image: linear-gradient(
+                        to right,
+                        $primary-color,
+                        $primary-color,
+                        50%,
+                        $white 50%
+                    );
+                }
+
+                &.newsletter-widget-two {
+                    &,
+                    &::after {
+                        @extend %bg-text-color;
+                    }
+
+                    .contact-info {
+                        li {
+                            a {
+                                @extend %color-white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .footer-bottom {
+            background-color: #0b0d0f;
+
+            .copyright {
+                color: #e4e5e5;
+            }
+
+            .footer-bottom-nav li a:not(:hover) {
+                color: #e4e5e5;
+            }
+        }
+    }
+}

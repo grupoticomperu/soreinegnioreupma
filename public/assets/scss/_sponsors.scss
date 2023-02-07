@@ -1,0 +1,47 @@
+/*=======  Sponsors  =======*/
+.sponsors-section {
+    .container-fluid {
+        @include respond-above(c1600) {
+            padding-left: 120px;
+            padding-right: 120px;
+        }
+    }
+
+    .sponsors-slider {
+        .sponsors-img {
+            text-align: center;
+            padding: 0px 15px;
+
+            img {
+                max-width: 225px;
+
+                @include respond-between(sm, c1350) {
+                    max-width: 185px;
+                }
+            }
+        }
+    }
+
+    .sponsors-slider-two {
+        .sponsors-img {
+            text-align: center;
+
+            img {
+                @include transition(0.3s);
+                opacity: 0.3;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .sponsors-slider,
+    .sponsors-slider-two {
+        .slick-track {
+            display: flex;
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,134 @@
+/*======= Accordion =======*/
+.accordion {
+    .accordion-item {
+        background-color: $soft-grey-2;
+        padding: 20px 30px;
+
+        @include respond-below(xs) {
+            padding: 20px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        .accordion-header {
+            button {
+                position: relative;
+                z-index: 1;
+                background-color: transparent;
+                font: {
+                    family: $raj;
+                    size: 18px;
+                    weight: 700;
+                }
+                line-height: 1.3;
+                padding-right: 25px;
+                width: 100%;
+                text-align: left;
+
+                span {
+                    color: $primary-color;
+                    margin-right: 5px;
+                }
+
+                &::after {
+                    content: "\f068";
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    font: {
+                        family: "Font Awesome 5 Pro";
+                        weight: 300;
+                        size: 15px;
+                    }
+                    transform: translateY(-50%);
+                }
+
+                &.collapsed {
+                    &::after {
+                        content: "\f067";
+                    }
+                }
+            }
+        }
+
+        .accordion-body {
+            padding: 15px 0 0;
+            color: #777a7a;
+            font-size: 16px;
+        }
+    }
+}
+
+/*======= Faq Accordion =======*/
+.faq-content-box {
+    background-color: $white;
+    padding: 70px 50px;
+    box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.04);
+
+    @include respond-below(xs) {
+        padding: 60px 25px;
+    }
+
+    .accordion {
+        padding-right: 70px;
+
+        @include respond-below(lg) {
+            padding-right: 0;
+        }
+
+        @include respond-below(md) {
+            margin-bottom: 50px;
+        }
+    }
+
+    .contact-btn {
+        display: flex;
+        align-items: center;
+        font: {
+            size: 16px;
+            family: $raj;
+            weight: 700;
+        }
+        line-height: 1;
+        margin-top: 30px;
+
+        @include respond-below(xs) {
+            font-size: 14px;
+        }
+
+        span {
+            display: block;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            line-height: 1.3;
+        }
+
+        a {
+            color: $text-color;
+            font-size: 34px;
+
+            @include respond-below(xs) {
+                font-size: 22px;
+            }
+        }
+
+        .icon {
+            width: 60px;
+            height: 60px;
+            flex: 0 0 60px;
+            text-align: center;
+            line-height: 60px;
+            background-color: $primary-color;
+            border-radius: 50%;
+            margin-right: 30px;
+            font-size: 24px;
+            color: $text-color;
+
+            i {
+                transform: rotate(320deg);
+            }
+        }
+    }
+}
